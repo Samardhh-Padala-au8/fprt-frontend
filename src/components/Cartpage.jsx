@@ -22,7 +22,7 @@ const Cartpage = (props) => {
         const headers = {
             "Content-Type": "application/json"
         }
-        return fetch(`http://localhost:5000/payment`, {
+        return fetch(`https://dddemo23536e542.herokuapp.com/payment`, {
             method: "POST",
             headers,
             body: JSON.stringify(body)

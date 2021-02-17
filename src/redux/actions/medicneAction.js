@@ -1,4 +1,4 @@
-import { GET_CATEGORY, GET_MEDICINE,ADD_MED_RESPONSE,ADD_CAT_RESPONSE,ADD_CART,DELETE_CART,EMPTY_CART } from "../actionTypes";
+import { GET_CATEGORY, GET_MEDICINE,ADD_MED_RESPONSE,ADD_CAT_RESPONSE,ADD_CART,DELETE_CART,EMPTY_CART,EMPTY_MED_RESPONSE,EMPTY_CAT_RESPONSE } from "../actionTypes";
 import axios from "axios";
 
 export const getmedicines = (search = "", categoryname = "") => async (dispatch) => {
@@ -66,4 +66,11 @@ export const deletecart=(id)=>(dispatch)=>{
 
 export const emptycart=()=>(dispatch)=>{
     dispatch({type:EMPTY_CART})
+}
+
+export const emptymedres=()=>(dispatch)=>{
+    dispatch({type:EMPTY_MED_RESPONSE})
+}
+export const emptycatres=()=>(dispatch)=>{
+    dispatch({type:EMPTY_CAT_RESPONSE})
 }

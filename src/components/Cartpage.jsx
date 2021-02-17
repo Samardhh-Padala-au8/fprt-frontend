@@ -48,7 +48,6 @@ const Cartpage = (props) => {
     return props.user ? (
         <div className="newmedbox">
             {props.cart.length > 0 ? <div>
-
                 <h1>Cart Page</h1>
                 <table>
                     <thead>
@@ -70,16 +69,18 @@ const Cartpage = (props) => {
                     </tbody>
                 </table>
                 <h3>Total Price : {Math.floor(price)}</h3>
-                <Stripecheckout
-                    stripeKey="pk_test_51H8fgDEorapUb2K40KTHl6SBCmtO8vbXlMeuFCrOa4ShtNHT6zsmGwjyE1fNlJEyEGI97d2QOIpD6M3V09dqC0Xb00LCNRNrDO"
-                    token={makePayment}
-                    name="Buy Medicine"
-                    amount={price * 100}
-                    currency="INR"
-                >
-                    <button className="btn-large green" onClick={() => setprice(price)}>Buy Product</button>
-                </Stripecheckout>
-                <button onClick={handleseeproducts}>Home</button>
+                <div className="btnbox">
+                    <button onClick={handleseeproducts}>Home</button>
+                    <Stripecheckout
+                        stripeKey="pk_test_51H8fgDEorapUb2K40KTHl6SBCmtO8vbXlMeuFCrOa4ShtNHT6zsmGwjyE1fNlJEyEGI97d2QOIpD6M3V09dqC0Xb00LCNRNrDO"
+                        token={makePayment}
+                        name="Buy Medicine"
+                        amount={price * 100}
+                        currency="INR"
+                    >
+                        <button className="btn-large green" onClick={() => setprice(price)}>Proceed to checkout</button>
+                    </Stripecheckout>
+                </div>
             </div> : <Redirect to="/buyerhome" />}
         </div>
 

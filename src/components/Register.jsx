@@ -22,34 +22,36 @@ const Register = (props) => {
     return (
         <div>
             {boolr ? <div>
+                <div className="btnbox">
+                    <button onClick={handleLogin}>Go to Login page</button>
+                    <button onClick={handleRegister}>Register for seller</button>
+                </div>
                 <div className="loginbox">
                     <h1>Buyer Registration</h1>
                     <input type="text" value={user.name} onChange={e => setUser({ ...user, name: e.target.value })} placeholder="please enter name" />
                     <input type="email" value={user.email} onChange={e => setUser({ ...user, email: e.target.value })} placeholder="please enter email" />
                     <input type="password" value={user.password} onChange={e => setUser({ ...user, password: e.target.value })} placeholder="please enter password" />
                     <button onClick={handleSubmit}>Register</button>
-                    <div>
-                        <button onClick={handleLogin}>Go to Login page</button>
-                        <button onClick={handleRegister}>Register for seller</button>
-                    </div>
                     {props.response ? <p>{props.response.message}</p> : ""}
                 </div>
 
             </div> :
                 <div>
-                    <div className="loginbox">
-                        <h1>Seller Registration</h1>
-                        <input type="text" value={user.name} onChange={e => setUser({ ...user, name: e.target.value })} placeholder="please enter name" />
-                        <input type="email" value={user.email} onChange={e => setUser({ ...user, email: e.target.value })} placeholder="please enter email" />
-                        <input type="password" value={user.password} onChange={e => setUser({ ...user, password: e.target.value })} placeholder="please enter password" />
-                        <button onClick={handleSubmitseller}>Register</button>
-                        <div>
+                    <div>
+                        <div className="btnbox">
                             <button onClick={handleLogin}>Go to Login page</button>
                             <button onClick={handleRegister}>Register for Buyer</button>
                         </div>
-                        {props.response ? <p>{props.response.message}</p> : ""}
-                    </div>
+                        <div className="loginbox">
+                            <h1>Seller Registration</h1>
+                            <input type="text" value={user.name} onChange={e => setUser({ ...user, name: e.target.value })} placeholder="please enter name" />
+                            <input type="email" value={user.email} onChange={e => setUser({ ...user, email: e.target.value })} placeholder="please enter email" />
+                            <input type="password" value={user.password} onChange={e => setUser({ ...user, password: e.target.value })} placeholder="please enter password" />
+                            <button onClick={handleSubmitseller}>Register</button>
 
+                            {props.response ? <p>{props.response.message}</p> : ""}
+                        </div>
+                    </div>
                 </div>}
         </div>
     )

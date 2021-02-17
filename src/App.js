@@ -14,16 +14,24 @@ import Indimedi from './components/Indimedi';
 function App() {
   return (
     <div className="App">
+      <div className="hh">
+        <div className="Header-Title" >
+          <span className="Header-Logo">MEDICAL KART</span>
+          <span className="Header-Sublogo">
+            The place where you find your medicines
+                </span>
+        </div>
+      </div>
       <Switch>
         <Route exact path="/" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/sellerhome" component={Sellerhome} />
         <Route exact path="/buyerhome" component={Buyerhome} />
-        <Route exact path="/cartpage" component={Cartpage}/>
-        <Route exact path="/sellerproducts" component={Sellerproducts}/>
-        <Route exact path="/final" component={Final}/>
-        <Route exact path="/indi/:name" component={Indimedi}/>
+        <Route exact path="/cartpage" component={Cartpage} />
+        <Route exact path="/sellerproducts" component={Sellerproducts} />
+        <Route exact path="/final" component={Final} />
+        <Route exact path="/indi/:name" component={Indimedi} />
         <Redirect to="/" />
       </Switch>
     </div>

@@ -63,7 +63,7 @@ const Buyerhome = (props) => {
                 </div>
                 <div className="medicinebox">
                     {
-                        props.medicines ? props.medicines.map(med => <div className="medibox" key={uuidv4()}>
+                        props.medicines ? props.medicines.map(med => <div className="mediboxi" key={uuidv4()}>
                             <img src={med.medicineimagelink} alt="medi" width="200" height="200" />
                             <div className="meddetails">
                                 <p><b>name:</b>{med.medicinename}</p>

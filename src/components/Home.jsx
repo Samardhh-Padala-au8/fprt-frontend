@@ -20,6 +20,7 @@ const Home = (props) => {
   return (
     <div>
       <h1>MEDICINES PAGE</h1>
+      <button onClick={handleseeproducts}>Login</button>
       <div>
         <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Enter the medicine name" />
         <select
@@ -33,7 +34,7 @@ const Home = (props) => {
           }
 
         </select>
-        <button onClick={handleseeproducts}>Login</button>
+
       </div>
       <div className="medicinebox">
         {

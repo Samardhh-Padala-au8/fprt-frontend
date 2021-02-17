@@ -1,4 +1,4 @@
-import { GET_CATEGORY, GET_MEDICINE, ADD_MED_RESPONSE, ADD_CAT_RESPONSE, ADD_CART, DELETE_CART,EMPTY_CART } from "../actionTypes";
+import { GET_CATEGORY, GET_MEDICINE, ADD_MED_RESPONSE, ADD_CAT_RESPONSE, ADD_CART, DELETE_CART, EMPTY_CART,EMPTY_CAT_RESPONSE,EMPTY_MED_RESPONSE } from "../actionTypes";
 
 const initialState = {
     categories: [],
@@ -20,12 +20,16 @@ const medicineReducer = (state = initialState, action) => {
             return { ...state, addresponse: payload }
         case ADD_CAT_RESPONSE:
             return { ...state, catresponse: payload }
+        case EMPTY_MED_RESPONSE:
+            return { ...state, addresponse: "" }
+        case EMPTY_CAT_RESPONSE:
+            return { ...state, catresponse: "" }
         case ADD_CART:
 
             return { ...state, cart: [...state.cart, payload] }
 
         case EMPTY_CART:
-            return{...state,cart:[]}
+            return { ...state, cart: [] }
 
         case DELETE_CART:
             console.log(payload)

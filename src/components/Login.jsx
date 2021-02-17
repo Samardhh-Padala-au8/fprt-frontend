@@ -24,31 +24,36 @@ const Login = (props) => {
     return (
         <div>
 
-            {boolr ? <div className="loginbox">
-                <h1>Buyer Login</h1>
-                <input type="email" value={user.email} onChange={e => setUser({ ...user, email: e.target.value })} placeholder="please enter email" />
-                <input type="password" value={user.password} onChange={e => setUser({ ...user, password: e.target.value })} placeholder="please enter password" />
-                <button onClick={handleSubmit} >Login</button>
-                <div>
+
+            {boolr ? <div>
+                <div className="btnbox">
                     <button onClick={handleRegister}>Go to the Register Page</button>
-                    <button onClick={handleLogin}>Login for seller</button>
-                </div>
-                <button onClick={handleseeproducts}>See the products</button>
-                {props.response ? <p>{props.response.message}</p> : ""}
-            </div> :
-                <div className="loginbox">
-                    <h1>Seller Login</h1>
+                    <button onClick={handleLogin}>Go to the seller login page</button>
+                    <button onClick={handleseeproducts}>See the products</button>
+                </div><div className="loginbox">
+                    <h1>Buyer Login</h1>
                     <input type="email" value={user.email} onChange={e => setUser({ ...user, email: e.target.value })} placeholder="please enter email" />
                     <input type="password" value={user.password} onChange={e => setUser({ ...user, password: e.target.value })} placeholder="please enter password" />
-                    <button onClick={handleSubmitseller} >Login</button>
-                    <div>
-                        <button onClick={handleRegister}>Go to the Register Page</button>
-                        <button onClick={handleLogin}>Login for buyer</button>
-                    </div>
-                    <button onClick={handleseeproducts}>See the products</button>
+                    <button onClick={handleSubmit} >Login</button>
+
                     {props.response ? <p>{props.response.message}</p> : ""}
-                </div>}
-            
+                </div> </div> :
+                <div>
+                    <div className="btnbox">
+                        <button onClick={handleRegister}>Go to the Register Page</button>
+                        <button onClick={handleLogin}>Go to the buyer login page</button>
+                        <button onClick={handleseeproducts}>See the products</button>
+                    </div>
+                    <div className="loginbox">
+                        <h1>Seller Login</h1>
+                        <input type="email" value={user.email} onChange={e => setUser({ ...user, email: e.target.value })} placeholder="please enter email" />
+                        <input type="password" value={user.password} onChange={e => setUser({ ...user, password: e.target.value })} placeholder="please enter password" />
+                        <button onClick={handleSubmitseller} >Login</button>
+
+
+                        {props.response ? <p>{props.response.message}</p> : ""}
+                    </div></div>}
+
         </div>
     )
 }

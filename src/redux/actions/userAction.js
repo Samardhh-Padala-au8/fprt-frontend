@@ -163,7 +163,7 @@ export const registerseller = (user, history) => async (dispatch) => {
     dispatch({ type: TOGGLE_IS_RES_FETCHING })
     dispatch({ type: SET_USER_RESPONSE, payload: null })
     const res = await axios.post(
-      `http://localhost:5000/seller/register`, user
+      `https://dddemo23536e542.herokuapp.com/seller/register`, user
     );
     if (res.data.success) {
       dispatch({
@@ -207,7 +207,7 @@ export const loginseller = (user, history) => async (dispatch) => {
     dispatch({ type: SET_USER, payload: null })
     console.log(user)
     const { data } = await axios.post(
-      `http://localhost:5000/seller/login`, user
+      `https://dddemo23536e542.herokuapp.com/seller/login`, user
     );
 
     if (data.success) {
@@ -254,7 +254,7 @@ export const getsellerDetail = (history) => async (dispatch) => {
     dispatch({ type: SET_USER_RESPONSE, payload: null })
     dispatch({ type: SET_USER_DETAIL, payload: null })
     const { data } = await axios(
-      `http://localhost:5000/seller`, {
+      `https://dddemo23536e542.herokuapp.com/seller`, {
       headers: { Authorization: `Bearer ${sessionStorage.getItem("auth_token")}` },
     }
     );
@@ -286,7 +286,7 @@ export const getsellerDetail = (history) => async (dispatch) => {
 
 export const logoutseller = (data1) => async (dispatch) => {
   const {data} = await axios.post(
-      `http://localhost:5000/seller/logout`,data1, {
+      `https://dddemo23536e542.herokuapp.com/seller/logout`,data1, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("auth_token")}` },
       }
     );
